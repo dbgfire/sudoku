@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:padding="10dp" >
+
+    <TextView android:id="@+id/lvl" android:layout_width="50dp" android:layout_height="50dp" tools:background="#AAA" />
+
+    <TextView android:id="@+id/num" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@android:color/black" android:layout_marginLeft="10dp" android:layout_toRightOf="@+id/lvl" android:layout_alignTop="@+id/lvl" android:textStyle="bold" tools:text="Pseudo" />
+
+    <TextView android:id="@+id/done" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@android:color/black" android:layout_alignLeft="@+id/num" android:layout_below="@+id/num" tools:text="Texte de mon tweet" />
+
+</RelativeLayout>
