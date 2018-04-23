@@ -56,33 +56,34 @@ public class Generation extends View implements View.OnTouchListener {
 
     @Override
     public void onDraw(Canvas canvas) {
-
-
+        //dessine la grille
         for(int j=0;j<9;j++){
             for(int i=0;i<9;i++) {
                 Grille.add(new Rect(0, 0, canvas.getWidth() / 9+ canvas.getWidth() / 9*i, canvas.getWidth() / 9+ canvas.getWidth() / 9*j));
 
             }
         }
+
         for(int i=1;i<10;i++){
              Chiffre.add(new Rect(0, canvas.getHeight() -3*(canvas.getWidth() / 9), canvas.getWidth() / 9*i, canvas.getHeight() -2*(canvas.getWidth() / 9)));
 
         }
+        //definition de diffrent parametre des textes
         Paint blue = new Paint();
-
         blue.setColor(Color.BLACK);
-
         blue.setStyle(Paint.Style.STROKE);
         blue.setTextSize(60);
 
 
-                //Draw to actual canvas
+        //Draw to actual canvas
 
         for (int i = 0; i < 81; i++) {
 
             canvas.drawRect(Grille.get(i), blue);
 
         }
+
+        //affiche les nombres dans la grille
         for(int i=0;i<9;i++){
 
             for(int y=0;y<9;y++) {
@@ -92,6 +93,8 @@ public class Generation extends View implements View.OnTouchListener {
             }
 
         }
+
+        //affiche les nombres a placer dans la grille
         for (int i=0;i<9;i++){
             canvas.drawRect(Chiffre.get(i), blue);
             canvas.drawText(""+(i+1),canvas.getWidth() / 9+ canvas.getWidth() / 9*i-(canvas.getWidth() / 9)/2-15,canvas.getHeight() -4*(canvas.getWidth() / 9)+15,blue);
@@ -111,24 +114,11 @@ public class Generation extends View implements View.OnTouchListener {
 
 
                if(x<=getWidth()&& y<= getWidth()){
-                  /*  AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(con);
-                    // set title
-                    alertDialogBuilder.setTitle("Coordonner");
-                    // set dialog message
-                    alertDialogBuilder
-                            .setMessage(""+((x/(getWidth()/9 ))+1)+" " +(1+(y/(getWidth()/9 ))))
-                            .setCancelable(true)
-                            .setPositiveButton("ok",new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog,int id) {
-                                    dialog.cancel();
-                                }
-                            });
-                    AlertDialog alertDialog = alertDialogBuilder.create();
-                    alertDialog.show();*/
+
                }else{
                    val=(x/(getWidth()/9 ))+1;
                }
-                // toucher en x,y
+                /
                 break;
             case MotionEvent.ACTION_MOVE: // mouvement vers x,y
 
